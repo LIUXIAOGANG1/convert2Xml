@@ -1,0 +1,11 @@
+*.project
+.settings
+target
+*.classpath
+*.springBeans
+*.iml
+.idea
+.metadata
+*.log
+doc
+logs
