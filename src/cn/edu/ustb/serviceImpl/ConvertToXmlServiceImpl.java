@@ -162,7 +162,7 @@ public class ConvertToXmlServiceImpl implements ConvertToXmlService {
 			}
 
 			StringBuffer xmlStart = new StringBuffer(
-					"<?xml version='1.0' encoding='utf-8'?><pnml><net id='Net-One' type='P/T net'><token id='Default' enabled='true' red='0' green='0' blue='0'/>");
+					"<?xml version='1.0' encoding='gbk'?><pnml><net id='Net-One' type='P/T net'><token id='Default' enabled='true' red='0' green='0' blue='0'/>");
 			StringBuffer xmlEnd = new StringBuffer("</net></pnml>");
 			allXml = xmlStart.append(startElem).append(midEleStrBuffer)
 					.append(endElem).append(linkStrBuffer)
