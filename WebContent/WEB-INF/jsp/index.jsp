@@ -46,6 +46,10 @@
                     <br>&nbsp;&nbsp;&nbsp;&nbsp;2、。。。。。
                 </p>
                 
+                <c:if test="${msg != null}">
+					${msg}
+				</c:if>
+                
                 <form class="margin-base-vertical" action="/convert2xml/login.html" method="post">
                     <p class="input-group text-center">
                         <span class="input-group-addon">用户名：</span>
@@ -89,6 +93,8 @@
 		</div>
 	</div>
 </body>
+
+
 
 <script language="javascript">
 	function reset() {

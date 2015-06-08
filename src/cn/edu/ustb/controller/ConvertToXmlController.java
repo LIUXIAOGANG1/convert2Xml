@@ -25,25 +25,25 @@ public class ConvertToXmlController {
 		return "index";
     }
 	
-	@ResponseBody
 	@RequestMapping("/login.html")
-	public String login(User user) {
+	public String login(Model model, User user) {
 		String name = user.getName();
 		String passWord = user.getPassWord();
 		if(StringUtils.isBlank(name)){
-			user.setReturnCode("1");
-			return new Gson().toJson(user);
+			model.addAttribute("msg", "用户名不能为空！");
+			return "index";
 		}
 		
 		if(StringUtils.isBlank(passWord)){
-			user.setReturnCode("2");
-			return new Gson().toJson(user);
+			model.addAttribute("msg", "密码不能为空！");
+			return "index";
 		}
 		
 		Integer count = convertToXmlService.confirmUser(user);
 		if(count <= 0){
-			user.setReturnCode("0");
-			return new Gson().toJson(user);
+			model.addAttribute("user", user);
+			model.addAttribute("msg", "此用户不存在或者输入错误！");
+			return "index";
 		}
 		return "userPage";
 	}
